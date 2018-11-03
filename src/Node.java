@@ -2,7 +2,7 @@ import java.util.Map;
 
 public class Node {
   private String value;
-  private ValueCallBack callback;
+  private ValueCallbackInterface callback;
   private Node parent;
   private Map<String, Node> children;
 
@@ -22,11 +22,11 @@ public class Node {
     return this.parent;
   }
 
-  public void setCallback(ValueCallBack callback) {
+  public void setCallback(ValueCallbackInterface callback) {
     this.callback = callback;
   }
 
-  public ValueCallBack getCallback() {
+  public ValueCallbackInterface getCallback() {
     return this.callback;
   }
 

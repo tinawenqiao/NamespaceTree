@@ -8,7 +8,7 @@ public class Tree {
       root = new Node();
       root.setValue(value);
       root.setParent(null);
-      root.setChildren(new HashMap<>());
+      root.setChildren(new HashMap<String, Node>());
       return root;
     }
 
@@ -28,7 +28,7 @@ public class Tree {
     }
 
     if (node.getChildren() == null) {
-      node.setChildren(new HashMap<>());
+      node.setChildren(new HashMap<String, Node>());
     }
     if (node.getChildren().containsKey(keys[depth])) {
       throw new Exception("Path already exist.");
@@ -80,7 +80,7 @@ public class Tree {
     return node;
   }
 
-  public void watch(String path, ValueCallBack callback) throws Exception {
+  public void watch(String path, ValueCallbackInterface callback) throws Exception {
     Node node = getNode(path);
     if (node == null) {
       throw new Exception();

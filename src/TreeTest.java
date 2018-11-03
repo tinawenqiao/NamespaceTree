@@ -7,9 +7,9 @@ public class TreeTest {
   public void TreeTest() throws Exception {
     tree.create("/", "root");
     tree.create("/a", "va");
-    tree.watch("/a", new ValueCallBack());
+    tree.watch("/a", new ValueCallbackSample());
     tree.create("/a/c", "vc");
-    tree.watch("/a/c", new ValueCallBack());
+    tree.watch("/a/c", new ValueCallbackSample());
     tree.create("/a/c/g", "foo");
     //Set value for /a/c/g will call the two callbacks registered on /a and /a/c
     tree.set_value("/a/c/g", "foo2");
